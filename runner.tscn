@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ioor4kosl0km"]
+
+[ext_resource type="Script" uid="uid://o5f6c6j02x8c" path="res://runner.gd" id="1_5pwe8"]
+[ext_resource type="Texture2D" uid="uid://b0vs43auv3xaf" path="res://Assets Godot Runner/background.png" id="1_m3p76"]
+[ext_resource type="FontFile" uid="uid://cwcq1qb8d3s30" path="res://Assets Godot Runner/PressStart2P-Regular.ttf" id="3_hfbw2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7b3c"]
+texture = ExtResource("1_m3p76")
+
+[node name="menu" type="Control" unique_id=2001082477]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5pwe8")
+
+[node name="Panel" type="Panel" parent="." unique_id=1617414644]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1119.0
+offset_bottom = 609.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f7b3c")
+
+[node name="Label" type="Label" parent="." unique_id=1437655183]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 265.0
+offset_top = 141.0
+offset_right = 865.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_hfbw2")
+theme_override_font_sizes/font_size = 100
+text = "RUNNER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=290133275]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 350.0
+offset_right = 779.0
+offset_bottom = 451.0
+theme_override_constants/separation = 40
+
+[node name="jogar" type="Button" parent="VBoxContainer" unique_id=1373416207]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hfbw2")
+text = "jogar
+"
+
+[node name="sair" type="Button" parent="VBoxContainer" unique_id=1013067650]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hfbw2")
+text = "sair"
+
+[connection signal="pressed" from="VBoxContainer/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="VBoxContainer/sair" to="." method="_on_sair_pressed"]
